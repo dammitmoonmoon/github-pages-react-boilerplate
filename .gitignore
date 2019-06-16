@@ -1,5 +1,6 @@
 node_modules/
 dist/
-config/local.js
 .idea/
+.cache/
 yarn-error.log
+config/local.js
