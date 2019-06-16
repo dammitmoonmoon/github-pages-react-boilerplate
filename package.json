@@ -6,6 +6,7 @@
     "license": "MIT",
     "private": true,
     "devDependencies": {
+        "@types/node": "^12.0.8",
         "@types/react": "^16.8.20",
         "@types/react-dom": "^16.8.4",
         "@types/styled-components": "^4.1.16",
@@ -24,8 +25,12 @@
         "typescript": "^3.5.2"
     },
     "dependencies": {
+        "@types/react-router-dom": "^4.3.4",
+        "dotenv": "^8.0.0",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
+        "react-router": "^5.0.1",
+        "react-router-dom": "^5.0.1",
         "styled-components": "^4.3.1"
     },
     "homepage": "https://dammitmoonmoon.github.io/github-pages-react-boilerplate/",
