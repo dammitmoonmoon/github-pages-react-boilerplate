@@ -1,0 +1,22 @@
+{
+    "name": "parcel",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Yulia Modestova <jmodestova@yahoo.com>",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^1.10.2",
+        "@typescript-eslint/parser": "^1.10.2",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^5.0.0",
+        "eslint-plugin-react-hooks": "^1.6.0",
+        "prettier": "^1.18.2",
+        "typescript": "^3.5.2"
+    },
+    "scripts": {
+        "addDev": "yarn add -D",
+        "format": "prettier \"src/**/*.{js, ts, tsx, html, css}\" --write",
+        "lint": "eslint \"src/**/*.{js,ts,tsx}\" --quiet --fix"
+    }
+}
