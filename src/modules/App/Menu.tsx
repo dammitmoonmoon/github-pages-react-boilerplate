@@ -13,6 +13,9 @@ const Menu = () => (
             <li>
                 <Link to="/topics">Topics</Link>
             </li>
+            <li>
+                <Link to="/demo">Demo</Link>
+            </li>
         </ul>
 
         <hr />
