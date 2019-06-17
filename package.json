@@ -6,12 +6,15 @@
     "license": "MIT",
     "private": true,
     "devDependencies": {
+        "@types/apollo-upload-client": "^8.1.1",
         "@types/enzyme": "^3.9.3",
         "@types/enzyme-adapter-react-16": "^1.0.5",
         "@types/jest": "^24.0.15",
         "@types/node": "^12.0.8",
         "@types/react": "^16.8.20",
         "@types/react-dom": "^16.8.4",
+        "@types/react-helmet": "^5.0.8",
+        "@types/react-router-dom": "^4.3.4",
         "@types/styled-components": "^4.1.16",
         "@typescript-eslint/eslint-plugin": "^1.10.2",
         "@typescript-eslint/parser": "^1.10.2",
@@ -36,23 +39,36 @@
         "typescript": "^3.5.2"
     },
     "dependencies": {
-        "@types/react-helmet": "^5.0.8",
-        "@types/react-router-dom": "^4.3.4",
+        "apollo": "^2.13.1",
+        "apollo-cache-inmemory": "^1.6.2",
+        "apollo-client": "^2.6.2",
+        "apollo-upload-client": "^10.0.1",
         "dotenv": "^8.0.0",
         "minireset.css": "^0.0.5",
         "react": "^16.8.6",
+        "react-apollo": "^2.5.6",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.1",
         "react-router": "^5.0.1",
         "react-router-dom": "^5.0.1",
         "styled-components": "^4.3.1"
     },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
     "homepage": "https://dammitmoonmoon.github.io/github-pages-react-boilerplate/",
     "scripts": {
         "dev": "parcel src/core/index.html",
         "format": "prettier \"src/**/*.{js, ts, tsx, html, css}\" --write",
         "lint": "eslint \"src/**/*.{js,ts,tsx}\" --fix",
         "test": "jest --watch",
+        "apollo-types": "yarn remove-apollo-types && yarn download-schema && yarn get-apollo-types",
+        "remove-apollo-types": "node src/core/removeApolloTypes.js",
+        "download-schema": "apollo service:download graphql.schema.json --endpoint=https://starwapi.herokuapp.com/",
+        "get-apollo-types": "apollo client:codegen apolloTypes --no-addTypename --target typescript --localSchemaFile graphql.schema.json --globalTypesFile ./src/common/graphql/ApolloTypes/globalTypes.ts",
         "predeploy": "rm -rf dist && parcel build src/core/index.html --public-url /github-pages-react-boilerplate/",
         "deploy": "gh-pages -d dist"
     }
